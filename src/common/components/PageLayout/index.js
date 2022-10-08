@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet";
 import { useLocation } from 'react-router-dom'
 import { routes } from '../../../constants'
+import { SideBar } from "./SideBar";
 import { TopBar } from './TopBar'
 
 export const PageLayout = ({ children, title }) => {
@@ -15,9 +16,14 @@ export const PageLayout = ({ children, title }) => {
       </Helmet>
       {location.pathname !== routes.SIGNIN ? (
         <div>
-          <TopBar />
-          <div>
-            <div>{children}</div>
+          <SideBar />
+          <div className="main-content">
+            <div className="position-relative">
+              <TopBar />
+            </div>
+            <div>
+              <div>{children}</div>
+            </div>
           </div>
         </div>
       ) : (
