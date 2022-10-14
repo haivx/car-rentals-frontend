@@ -9,5 +9,7 @@ export const routes = {
   BLOG: "/blog",
   NOTFOUND: "/404",
   CREATE_POST: "/admin/create-post",
-  PREVIEW_POST: "/admin/post/preview"
+  PREVIEW_POST: "/admin/post/preview",
+  USERS: '/admin/users',
+  PRODUCT: '/product'
 }

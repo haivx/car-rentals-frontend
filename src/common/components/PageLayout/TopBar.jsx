@@ -1,13 +1,12 @@
 import React from 'react';
-import Icon2 from './icon2.svg';
+import Logo from 'assets/images/logo.png';
 
-export const TopBar = (props) => {
-  const { appName, path } = props;
+export const TopBar = () => {
   return (
     <nav className="nav navbar navbar-expand-lg navbar-light iq-navbar">
       <div className="container-fluid navbar-inner">
         <a href="{{path}}dashboard/index.html" className="navbar-brand">
-          {/* {{> partials/components/logo color="true" }} */}
+          <img src={Logo} class="img-fluid" alt="logo-big" />
         </a>
         <div className="sidebar-toggle sidebar-toggle-responsive" data-toggle="sidebar" data-active="true">
           <i className="icon">
@@ -58,18 +57,17 @@ export const TopBar = (props) => {
           <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
             <li className="nav-item dropdown">
               <a
-                href="#"
+                href="#!"
                 className="search-toggle nav-link"
                 id="dropdownMenuButton2"
                 data-bs-toggle="dropdown"
-                aria-haspopup="true"
                 aria-expanded="false"
               >
                 <img
-                  src="{{path}}assets/images/flag/flag001.png"
+                  src={require('assets/images/flag/flag001.png')}
                   className="img-fluid rounded-circle"
                   alt="user"
-                  // style="height: 30px; min-width: 30px; width: 30px;"
+                  style={{ height: 30, minWidth: 30, width: 30 }}
                 />
                 <span className="bg-primary"></span>
               </a>
@@ -78,56 +76,56 @@ export const TopBar = (props) => {
                   <div className=" p-0 ">
                     <ul className="list-group list-group-flush p-0">
                       <li className="iq-sub-card list-group-item">
-                        <a className="p-0" href="#">
+                        <a className="p-0" href="#!">
                           <img
-                            src="{{path}}assets/images/flag/flag-03.png"
+                            src={require('assets/images/flag/flag-03.png')}
                             alt="img-flaf"
                             className="img-fluid me-2"
-                            // style="width: 15px;height: 15px;min-width: 15px;"
+                            style={{ height: 15, minWidth: 15, width: 15 }}
                           />
                           Spanish
                         </a>
                       </li>
                       <li className="iq-sub-card list-group-item">
-                        <a className="p-0" href="#">
+                        <a className="p-0" href="#!">
                           <img
-                            src="{{path}}assets/images/flag/flag-04.png"
+                            src={require('assets/images/flag/flag-04.png')}
                             alt="img-flaf"
                             className="img-fluid me-2"
-                            // style="width: 15px;height: 15px;min-width: 15px;"
+                            style={{ height: 15, minWidth: 15, width: 15 }}
                           />
                           Italian
                         </a>
                       </li>
                       <li className="iq-sub-card list-group-item">
-                        <a className="p-0" href="#">
+                        <a className="p-0" href="#!">
                           <img
-                            src="{{path}}assets/images/flag/flag-02.png"
+                            src={require('assets/images/flag/flag-02.png')}
                             alt="img-flaf"
                             className="img-fluid me-2"
-                            // style="width: 15px;height: 15px;min-width: 15px;"
+                            style={{ height: 15, minWidth: 15, width: 15 }}
                           />
                           French
                         </a>
                       </li>
                       <li className="iq-sub-card list-group-item">
-                        <a className="p-0" href="#">
+                        <a className="p-0" href="#!">
                           <img
-                            src="{{path}}assets/images/flag/flag-05.png"
+                            src={require('assets/images/flag/flag-05.png')}
                             alt="img-flaf"
                             className="img-fluid me-2"
-                            // style="width: 15px;height: 15px;min-width: 15px;"
+                            style={{ height: 15, minWidth: 15, width: 15 }}
                           />
                           German
                         </a>
                       </li>
                       <li className="iq-sub-card list-group-item">
-                        <a className="p-0" href="#">
+                        <a className="p-0" href="#!">
                           <img
-                            src="{{path}}assets/images/flag/flag-06.png"
+                            src={require('assets/images/flag/flag-06.png')}
                             alt="img-flaf"
                             className="img-fluid me-2"
-                            // style="width: 15px;height: 15px;min-width: 15px;"
+                            style={{ height: 15, minWidth: 15, width: 15 }}
                           />
                           Japanese
                         </a>
@@ -138,7 +136,7 @@ export const TopBar = (props) => {
               </div>
             </li>
             <li className="nav-item dropdown">
-              <a href="#" className="nav-link" id="notification-drop" data-bs-toggle="dropdown">
+              <a href="#!" className="nav-link" id="notification-drop" data-bs-toggle="dropdown">
                 <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M19.7695 11.6453C19.039 10.7923 18.7071 10.0531 18.7071 8.79716V8.37013C18.7071 6.73354 18.3304 5.67907 17.5115 4.62459C16.2493 2.98699 14.1244 2 12.0442 2H11.9558C9.91935 2 7.86106 2.94167 6.577 4.5128C5.71333 5.58842 5.29293 6.68822 5.29293 8.37013V8.79716C5.29293 10.0531 4.98284 10.7923 4.23049 11.6453C3.67691 12.2738 3.5 13.0815 3.5 13.9557C3.5 14.8309 3.78723 15.6598 4.36367 16.3336C5.11602 17.1413 6.17846 17.6569 7.26375 17.7466C8.83505 17.9258 10.4063 17.9933 12.0005 17.9933C13.5937 17.9933 15.165 17.8805 16.7372 17.7466C17.8215 17.6569 18.884 17.1413 19.6363 16.3336C20.2118 15.6598 20.5 14.8309 20.5 13.9557C20.5 13.0815 20.3231 12.2738 19.7695 11.6453Z"
@@ -160,11 +158,11 @@ export const TopBar = (props) => {
                     </div>
                   </div>
                   <div className="card-body p-0">
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <img
                           className="avatar-40 rounded-pill bg-soft-primary p-1"
-                          src="{{path}}assets/images/avatars/01.png"
+                          src={require('assets/images/avatars/01.png')}
                           alt=""
                         />
                         <div className="ms-3 w-100">
@@ -176,12 +174,12 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/06.png"
+                            src={require('assets/images/avatars/06.png')}
                             alt=""
                           />
                         </div>
@@ -194,11 +192,11 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <img
                           className="avatar-40 rounded-pill bg-soft-primary p-1"
-                          src="{{path}}assets/images/avatars/07.png"
+                          src={require('assets/images/avatars/07.png')}
                           alt=""
                         />
                         <div className="ms-3 w-100">
@@ -210,11 +208,11 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <img
                           className="avatar-40 rounded-pill bg-soft-primary p-1"
-                          src="{{path}}assets/images/avatars/08.png"
+                          src={require('assets/images/avatars/08.png')}
                           alt=""
                         />
                         <div className="w-100 ms-3">
@@ -231,14 +229,7 @@ export const TopBar = (props) => {
               </div>
             </li>
             <li className="nav-item dropdown">
-              <a
-                href="#"
-                className="nav-link"
-                id="mail-drop"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
+              <a href="#!" className="nav-link" id="mail-drop" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     opacity="0.4"
@@ -260,12 +251,12 @@ export const TopBar = (props) => {
                     </div>
                   </div>
                   <div className="card-body p-0 ">
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex  align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/10.png"
+                            src={require('assets/images/avatars/10.png')}
                             alt=""
                           />
                         </div>
@@ -275,12 +266,12 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/01.png"
+                            src={require('assets/images/avatars/01.png')}
                             alt=""
                           />
                         </div>
@@ -290,12 +281,12 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/09.png"
+                            src={require('assets/images/avatars/09.png')}
                             alt=""
                           />
                         </div>
@@ -305,12 +296,12 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/08.png"
+                            src={require('assets/images/avatars/08.png')}
                             alt=""
                           />
                         </div>
@@ -320,12 +311,12 @@ export const TopBar = (props) => {
                         </div>
                       </div>
                     </a>
-                    <a href="#" className="iq-sub-card">
+                    <a href="#!" className="iq-sub-card">
                       <div className="d-flex align-items-center">
                         <div className="">
                           <img
                             className="avatar-40 rounded-pill bg-soft-primary p-1"
-                            src="{{path}}assets/images/avatars/07.png"
+                            src={require('assets/images/avatars/07.png')}
                             alt=""
                           />
                         </div>
@@ -342,14 +333,14 @@ export const TopBar = (props) => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link py-0 d-flex align-items-center"
-                href="#"
+                href="#!"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 <img
-                  src="{{path}}assets/images/avatars/01.png"
+                  src={require('assets/images/avatars/01.png')}
                   alt="User-Profile"
                   className="img-fluid avatar avatar-50 avatar-rounded"
                 />
@@ -365,7 +356,7 @@ export const TopBar = (props) => {
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="{{path}}dashboard/app/user-privacy-setting.html">
+                  <a className="dropdown-item" href="#!">
                     Privacy Setting
                   </a>
                 </li>

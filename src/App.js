@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { routes } from "./constants";
-import { HomePage } from "./containers";
+import { HomePage, ProductPage, UsersPage } from "./containers";
 import { PublicRouter } from "./AuthRouters";
 
 
@@ -17,14 +17,22 @@ const Router = () => {
           </PublicRouter>
         }
       />
-      {/* <Route
-        path={routes.SIGNIN}
+      <Route
+        path={routes.USERS}
         element={
-          <PublicRouter title="Sign in">
-            <LoginPage />
+          <PublicRouter title="Users Page">
+            <UsersPage />
           </PublicRouter>
         }
-      /> */}
+      />
+      <Route
+        path={routes.PRODUCT}
+        element={
+          <PublicRouter title="Products Page">
+            <ProductPage />
+          </PublicRouter>
+        }
+      />
       <Route path="*" element={<Navigate to={routes.NOTFOUND} replace />} />
     </Routes>
   )

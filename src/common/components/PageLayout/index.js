@@ -1,17 +1,17 @@
 
 import { Helmet } from "react-helmet";
 import { useLocation } from 'react-router-dom'
-import { routes } from '../../../constants'
+import { routes } from 'constants'
 import { SideBar } from "./SideBar";
 import { TopBar } from './TopBar'
 
-export const PageLayout = ({ children, title }) => {
+export const PageLayout = ({ children, title = "Car rental" }) => {
   const location = useLocation()
   return (
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Car rental</title>
+        <title>{title}</title>
         <link rel="canonical" href="http://car-rental.com" />
       </Helmet>
       {location.pathname !== routes.SIGNIN ? (
@@ -22,7 +22,7 @@ export const PageLayout = ({ children, title }) => {
               <TopBar />
             </div>
             <div>
-              <div>{children}</div>
+              <div className="mx-20 my-20">{children}</div>
             </div>
           </div>
         </div>
