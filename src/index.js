@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "swiper/css";
+import "swiper/css/scrollbar";
 import "./assets/scss/vrooom.scss"
 import "./assets/scss/custom.scss"
 

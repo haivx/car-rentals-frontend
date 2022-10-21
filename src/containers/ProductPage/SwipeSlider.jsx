@@ -1,4 +1,5 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const SwipeSlider = () => {
   const config = [
@@ -13,7 +14,7 @@ const SwipeSlider = () => {
       vehiclesImage: '5.png',
       vehiclesData: '1997 BMW',
       vehiclesName: 'Bmw X1',
-      vehiclesAmount: '$58,000.00',
+      vehiclesAmount: '$60,000.00',
       rating: '2',
     },
     {
@@ -38,14 +39,13 @@ const SwipeSlider = () => {
       rating: '3',
     },
   ];
-
   return (
     <>
-      <div className="card-header swiper-container d-slider2">
+      <div className="card-header swiper-container d-slider2 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
         <div className="swiper-wrapper">
-          {config.map((item) => (
-            <>
-              <div className="swiper-slide">
+          <Swiper slidesPerView={4} spaceBetween={10} className="mySwiper">
+            {config.map((item) => (
+              <SwiperSlide>
                 <div class="iq-upcoming-cars">
                   <img
                     src={require(`assets/images/dashboard/${item.vehiclesImage}`)}
@@ -71,9 +71,9 @@ const SwipeSlider = () => {
                     <h6>{item.vehiclesAmount}</h6>
                   </div>
                 </div>
-              </div>
-            </>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </>
