@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { routes } from "./constants";
-import { HomePage, ProductPage, UsersPage } from "./containers";
+import { HomePage, ProductPage, UsersPage, SignInPage } from "./containers";
 import { PublicRouter } from "./AuthRouters";
 
 
@@ -14,6 +14,14 @@ const Router = () => {
         element={
           <PublicRouter title="Home Page">
             <HomePage />
+          </PublicRouter>
+        }
+      />
+      <Route
+        path={routes.SIGNIN}
+        element={
+          <PublicRouter title="SIGN IN">
+            <SignInPage />
           </PublicRouter>
         }
       />

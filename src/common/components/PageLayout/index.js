@@ -12,7 +12,7 @@ export const PageLayout = ({ children, title = "Car rental" }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        <link rel="canonical" href="http://car-rental.com" />
+        <link rel="canonical" href="http://xuanhai.beauty" />
       </Helmet>
       {location.pathname !== routes.SIGNIN ? (
         <div>
