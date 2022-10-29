@@ -33,12 +33,12 @@ export const SideBar = () => {
         {
           id: 1,
           name: 'Login',
-          link: '#!',
+          link: '/sign-in',
         },
         {
           id: 2,
           name: 'Register',
-          link: '#!',
+          link: '/sign-up',
         },
         {
           id: 3,

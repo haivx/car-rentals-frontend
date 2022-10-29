@@ -1,12 +1,11 @@
+import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
+import { routes } from 'constants';
+import { SideBar } from './SideBar';
+import { TopBar } from './TopBar';
 
-import { Helmet } from "react-helmet";
-import { useLocation } from 'react-router-dom'
-import { routes } from 'constants'
-import { SideBar } from "./SideBar";
-import { TopBar } from './TopBar'
-
-export const PageLayout = ({ children, title = "Car rental" }) => {
-  const location = useLocation()
+export const PageLayout = ({ children, title = 'Car rental' }) => {
+  const location = useLocation();
   return (
     <div>
       <Helmet>
@@ -14,7 +13,7 @@ export const PageLayout = ({ children, title = "Car rental" }) => {
         <title>{title}</title>
         <link rel="canonical" href="http://xuanhai.beauty" />
       </Helmet>
-      {location.pathname !== routes.SIGNIN ? (
+      {![routes.SIGNIN, routes.SIGNUP, routes.HOMEPAGE].includes(location.pathname) ? (
         <div>
           <SideBar />
           <div className="main-content">
@@ -30,5 +29,5 @@ export const PageLayout = ({ children, title = "Car rental" }) => {
         <div>{children}</div>
       )}
     </div>
-  )
-}
+  );
+};

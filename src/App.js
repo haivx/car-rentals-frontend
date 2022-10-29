@@ -1,9 +1,8 @@
-import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
-import { routes } from "./constants";
-import { HomePage, ProductPage, UsersPage, SignInPage } from "./containers";
-import { PublicRouter } from "./AuthRouters";
-
+import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { routes } from './constants';
+import { HomePage, ProductPage, UsersPage, SignInPage, SignUpPage } from './containers';
+import { PublicRouter, PrivateRouter } from './AuthRouters';
 
 const Router = () => {
   return (
@@ -20,8 +19,16 @@ const Router = () => {
       <Route
         path={routes.SIGNIN}
         element={
-          <PublicRouter title="SIGN IN">
+          <PublicRouter title="Sign In">
             <SignInPage />
+          </PublicRouter>
+        }
+      />
+      <Route
+        path={routes.SIGNUP}
+        element={
+          <PublicRouter title="Sign Up">
+            <SignUpPage />
           </PublicRouter>
         }
       />
@@ -36,21 +43,20 @@ const Router = () => {
       <Route
         path={routes.PRODUCT}
         element={
-          <PublicRouter title="Products Page">
+          <PrivateRouter title="Products Page">
             <ProductPage />
-          </PublicRouter>
+          </PrivateRouter>
         }
       />
       <Route path="*" element={<Navigate to={routes.NOTFOUND} replace />} />
     </Routes>
-  )
-}
-
+  );
+};
 
 export const App = () => (
   <BrowserRouter>
     <Router />
   </BrowserRouter>
-)
+);
 
 export default App;

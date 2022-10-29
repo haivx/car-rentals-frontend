@@ -27,10 +27,10 @@ export const HomePage = ({ appName = 'Rentals Car' }) => {
             />
           </svg>
           <h1 class="my-4 text-primary">
-            <span>{appName} - Design System</span>
+            <span>{appName} - LUXURY CAR</span>
           </h1>
           <h4 class="mb-5">
-            Production ready Open Source <b>Dashboard UI Kit</b> and <b>Design System</b>.
+            Explore All Services for <b>Car Rental</b> or <b> Selling Luxury Used Car</b>.
           </h4>
           <div class="d-flex justify-content-center align-items-center">
             <div>
@@ -51,7 +51,7 @@ export const HomePage = ({ appName = 'Rentals Car' }) => {
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-                Live Preview
+                View Products
               </a>
             </div>
           </div>
@@ -78,15 +78,7 @@ export const HomePage = ({ appName = 'Rentals Car' }) => {
             <div class="collapse navbar-collapse" id="navbar-2">
               <ul class="mb-2 navbar-nav ms-auto mb-lg-0 d-flex align-items-start">
                 <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    aria-current="page"
-                    href="#!"
-                    // target="_blank"
-                    // rel="noreferrer"
-                  >
-                    Documentation
-                  </a>
+                  "Action without philosophy is a lethal weapon, philosophy without action is worthless."
                 </li>
               </ul>
             </div>

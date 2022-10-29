@@ -43,7 +43,7 @@ const SwipeSlider = () => {
     <>
       <div className="card-header swiper-container d-slider2 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
         <div className="swiper-wrapper">
-          <Swiper slidesPerView={4} spaceBetween={10} className="mySwiper">
+          <Swiper slidesPerView={4} spaceBetween={10} className="mySwiper" autoplay>
             {config.map((item) => (
               <SwiperSlide>
                 <div class="iq-upcoming-cars">
