@@ -2,15 +2,14 @@ import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const HookForm = ({ onSubmit, config = {}, children, schema, id = '', loading = false, className }) => {
+const HookForm = ({ onSubmit, oninvalid, config = {}, children, schema, id = '', loading = false, className }) => {
   const methods = useForm({
     ...config,
     resolver: schema && yupResolver(schema),
   });
-
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className={className} id={id}>
+      <form onSubmit={methods.handleSubmit(onSubmit, oninvalid)} className={className} id={id}>
         {React.Children.map(children, (Child) => {
           return Child;
         })}

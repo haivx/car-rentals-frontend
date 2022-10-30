@@ -60,7 +60,7 @@ export const HomePage = ({ appName = 'Rentals Car' }) => {
       <div class="container">
         <nav class="rounded nav navbar navbar-expand-lg navbar-light top-1">
           <div class="container-fluid">
-            <a class="mx-2 navbar-brand" href="#!">
+            <a class="mx-2 navbar-brand z-idx-1" href="#!">
               <img src={Logo} class="img-fluid" alt="logo-big" />
               <h5 class="logo-title">{appName}</h5>
             </a>

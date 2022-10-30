@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 import { Input, HookForm } from 'common/components/Form';
 import { userServices } from 'services/users';
 
 export const SignInPage = () => {
+  const [errMsg, setError] = useState(null);
   const onSubmit = async (data) => {
-    const response = await userServices.post(data);
+    const response = await userServices.login(data);
+    if (!response) {
+      setError('Wrong email or password, please try again!');
+    }
     console.log({
       response,
     });
   };
   const schema = yup.object().shape({
-    email: yup.string().required(),
+    email: yup.string().email().required(),
     password: yup.string().required(),
   });
   return (
@@ -19,7 +24,6 @@ export const SignInPage = () => {
       <div className="main-auth-page">
         <a href="../../dashboard/index.html" className="auth-logo">
           <img src={require('assets/images/logo.png')} className="img-fluid" alt="" />
-          pư
         </a>
         <div className="clip-board">
           <div className="container">
@@ -45,7 +49,9 @@ export const SignInPage = () => {
                           },
                         }}
                       >
-                        <p className="text-center">Sign in to stay connected.</p>
+                        <p className="text-center">
+                          {errMsg ? <span className="text-invalid">{errMsg}</span> : 'Sign in to stay connected.'}
+                        </p>
                         <div className="row text-start mb-3">
                           <div className="col-12 mb-3">
                             <div className="form-floating">
@@ -60,7 +66,12 @@ export const SignInPage = () => {
                           </div>
                           <div className="col-12 mb-3">
                             <div className="form-floating">
-                              <Input name="password" className="form-control" helperTextPosition="text-center" />
+                              <Input
+                                name="password"
+                                className="form-control"
+                                type="password"
+                                helperTextPosition="text-center"
+                              />
                               <label htmlFor="input2">Password</label>
                             </div>
                           </div>
@@ -228,10 +239,7 @@ export const SignInPage = () => {
               </form>
               <div className="new-account mt-3 text-center">
                 <p>
-                  Don't have an account?{' '}
-                  <a className="" href="/sign-up">
-                    Click here to sign up
-                  </a>
+                  Don't have an account? <Link to="/sign-up">Click here to sign up</Link>
                 </p>
               </div>
             </div>

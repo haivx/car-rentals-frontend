@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormContext, get, Controller } from 'react-hook-form';
+import { useFormContext, Controller } from 'react-hook-form';
 
 const CustomInput = ({
   name = '',
@@ -11,6 +11,8 @@ const CustomInput = ({
   helperTextPosition = 'text-left',
   value,
   id,
+  type,
+  showValidationMsg,
   ...props
 }) => {
   return (
@@ -24,17 +26,18 @@ const CustomInput = ({
       <input
         id={id}
         value={value}
+        type={type}
         name={props.name}
         onChange={onChange}
         className={`form-control ${!!error ? 'is-invalid' : ''}`}
       />
 
-      {!!error && <div className={`invalid-feedback ${helperTextPosition}`}>{helperText}</div>}
+      {!!error && showValidationMsg && <div className={`invalid-feedback ${helperTextPosition}`}>{helperText}</div>}
     </>
   );
 };
 
-const Input = ({ name = '', id = '', defaultValues = '', ...props }) => {
+const Input = ({ name = '', defaultValues = '', showValidationMsg = true, ...props }) => {
   const {
     setValue,
     control,
@@ -58,6 +61,7 @@ const Input = ({ name = '', id = '', defaultValues = '', ...props }) => {
             helperText={!!errors[name] && errors[name].message}
             onChange={onChange}
             value={field.value ?? ''}
+            showValidationMsg={showValidationMsg}
             {...props}
           />
         );
